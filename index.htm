@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emily & Rey</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Georgia, serif;
+}
+
+body{
+background:#f6f2eb;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+overflow:hidden;
+}
+
+.envelope{
+width:320px;
+height:220px;
+background:#efe8de;
+position:relative;
+border-radius:8px;
+cursor:pointer;
+box-shadow:0 15px 35px rgba(0,0,0,.25);
+transition:.8s;
+}
+
+.envelope:before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:0;
+height:0;
+border-left:160px solid transparent;
+border-right:160px solid transparent;
+border-top:110px solid #e6ddd1;
+transform-origin:top;
+transition:1s;
+z-index:3;
+}
+
+.letter{
+position:absolute;
+left:15px;
+right:15px;
+bottom:10px;
+height:190px;
+background:white;
+border-radius:8px;
+padding:20px;
+text-align:center;
+transition:1s;
+z-index:1;
+overflow:auto;
+}
+
+.open .letter{
+transform:translateY(-160px);
+}
+
+.open:before{
+transform:rotateX(180deg);
+}
+
+h1{
+font-size:42px;
+color:#9b7d4f;
+margin-bottom:10px;
+}
+
+h2{
+font-size:18px;
+margin-bottom:20px;
+color:#777;
+}
+
+.info{
+margin:12px 0;
+font-size:18px;
+color:#444;
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 25px;
+background:#b89a63;
+color:white;
+text-decoration:none;
+border-radius:30px;
+}
+
+.flores{
+position:absolute;
+top:-20px;
+left:-20px;
+font-size:70px;
+opacity:.35;
+}
+
+.flores2{
+position:absolute;
+bottom:-20px;
+right:-20px;
+font-size:70px;
+opacity:.35;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="envelope" onclick="abrir()">
+
+<div class="flores">🌸</div>
+
+<div class="flores2">🤍</div>
+
+<div class="letter">
+
+<h2>Con mucha alegría</h2>
+
+<h1>Emily <br>&<br> Rey</h1>
+
+<div class="info">
+📅 15 de Agosto
+</div>
+
+<div class="info">
+🕡 6:30 PM
+</div>
+
+<div class="info">
+⛪ Ceremonia<br>
+Quinta Kary
+</div>
+
+<div class="info">
+🎉 Recepción<br>
+Quinta Kary
+</div>
+
+<div class="info">
+📞 Confirmar asistencia<br>
+878-111-7847<br>
+878-266-1179
+</div>
+
+<a class="btn"
+href="https://wa.me/528781117847">
+Confirmar asistencia
+</a>
+
+</div>
+
+</div>
+
+<script>
+function abrir(){
+document.querySelector(".envelope").classList.toggle("open");
+}
+</script>
+
+</body>
+</html>
